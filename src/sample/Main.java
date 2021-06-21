@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -16,8 +17,12 @@ public class Main extends Application {
         Scene scene = new Scene(root,500,300);
         scene.getStylesheets().add(BootstrapFX.bootstrapFXStylesheet());
         primaryStage.setScene(scene);
-        primaryStage.setMaximized(true);
+        //primaryStage.setMaximized(true);
         primaryStage.show();
+        primaryStage.setOnCloseRequest(e->{
+            Platform.exit();
+            System.exit(0);
+        });
     }
 
 

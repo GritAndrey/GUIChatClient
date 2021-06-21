@@ -1,33 +1,29 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.text.TextFlow?>
-<?import javafx.scene.text.Text?>
-<BorderPane fx:controller="sample.Controller"
-            xmlns:fx="http://javafx.com/fxml">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
     <top>
         <TextFlow styleClass="alert, alert-success">
-            <Text> Messages</Text>
+            <Text></Text>
         </TextFlow>
     </top>
     <left>
+        <TextArea fx:id="userListTextArea"  editable="false" prefHeight="161.0" prefWidth="103.0" />
     </left>
     <right>
-        <VBox spacing="10" alignment="BOTTOM_RIGHT">
-            <Button text="Send->" styleClass="btn, btn-lg, btn-success"/>
+        <VBox alignment="BOTTOM_RIGHT" spacing="10">
+            <Button onAction="#send" styleClass="btn, btn-lg, btn-success" text="Send -&gt;" />
+            <Button fx:id="connectButton" onAction="#connect" styleClass="btn, btn-lg, btn-success" text="Connect" />
         </VBox>
     </right>
     <center>
-        <TextArea styleClass="text-primary"/>
+        <TextArea fx:id="textArea" editable="false" styleClass="text-primary" />
     </center>
     <bottom>
-        <TextField  styleClass="text-primary" text="enter message"  />
+        <TextField fx:id="textField" onAction="#send" styleClass="text-primary" text="enter message" />
     </bottom>
 
 </BorderPane>
