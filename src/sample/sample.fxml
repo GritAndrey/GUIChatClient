@@ -4,26 +4,35 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="sample.Controller">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <top>
         <TextFlow styleClass="alert, alert-success">
-            <Text></Text>
+            <Text />
         </TextFlow>
     </top>
     <left>
-        <TextArea fx:id="userListTextArea"  editable="false" prefHeight="161.0" prefWidth="103.0" />
+        <TextArea fx:id="userListTextArea" editable="false" prefHeight="161.0" prefWidth="200" styleClass="text-danger">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
     </left>
     <right>
-        <VBox alignment="BOTTOM_RIGHT" spacing="10">
-            <Button onAction="#send" styleClass="btn, btn-lg, btn-success" text="Send -&gt;" />
-            <Button fx:id="connectButton" onAction="#connect" styleClass="btn, btn-lg, btn-success" text="Connect" />
+        <VBox alignment="BOTTOM_CENTER" spacing="10">
+            <Button onAction="#send" styleClass="btn, btn-lg, btn-success" text="Send..." />
+            <Button fx:id="connectButton" onAction="#connect" styleClass="btn, btn-lg, btn-warning" text="Connect" />
         </VBox>
     </right>
     <center>
-        <TextArea fx:id="textArea" editable="false" styleClass="text-primary" />
+        <TextArea fx:id="textArea" editable="false" styleClass="text-primary">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
     </center>
     <bottom>
-        <TextField fx:id="textField" onAction="#send" styleClass="text-primary" text="enter message" />
+        <TextField fx:id="textField" onAction="#send" styleClass="text-primary" text="">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
     </bottom>
 
 </BorderPane>

@@ -39,9 +39,11 @@ public class Controller {
     @FXML
     private void connect() {
         try {
-            //textArea.getStyleClass().remove("btn-success");
             connectButton.getStyleClass().removeAll();
+            connectButton.getStyleClass().add("btn-danger");
             connectButton.setDisable(true);
+            connectButton.setText("Connected");
+            textArea.setFocusTraversable(false);
             Socket socket = new Socket("127.0.0.1", 8188); // Создаём сокет, для подключения к серверу
             System.out.println("Успешно подключен");
             out = new DataOutputStream(socket.getOutputStream());
